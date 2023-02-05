@@ -1,15 +1,12 @@
-package Lab.lab_5_6;
+package programowanie_zaawansowane.Lab.lab_5_i_6;
 
 public class Test {
     public static void main(String[] args) {
-        Plik plik1 = new Plik();
-        plik1.Plik("plik1");
+        Plik plik1 = new Plik("plik1");
 
-        Plik plik2 = new Plik();
-        plik1.Plik("plik2");
+        Plik plik2 = new Plik("plik2");
 
-        Plik plik3 = new Plik();
-        plik1.Plik("plik3");
+        Plik plik3 = new Plik("plik3");
 
 
         plik1.zapelnij(false);

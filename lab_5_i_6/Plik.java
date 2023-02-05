@@ -1,6 +1,5 @@
-package Lab.lab_5_6;
+package programowanie_zaawansowane.Lab.lab_5_i_6;
 
-import java.io.Console;
 import java.util.Random;
 import java.util.Scanner;
 import java.io.File;  // Import the File class
@@ -13,7 +12,7 @@ public class Plik {
     private int Rozmiar;
     private String Zavartosc;
 
-    public void Plik(String nazwa){
+    public Plik(String nazwa){
         this.Nazwa=nazwa;
         Rozszerzenia=".file";
         Rozmiar=0;
@@ -27,11 +26,11 @@ public class Plik {
     public void zapelnij(boolean czy_nadpisac){
         String tmp;
 
-        Scanner in = new Scanner(System.in);
+        try (Scanner in = new Scanner(System.in)) {
+            System.out.println("Proszę podać zawartość pliku jako symbole z klawiatury i w końcu nacisnąć ENTER");
+            tmp = in.nextLine();
+        }
  
-        System.out.println("Proszę podać zawartość pliku jako symbole z klawiatury i w końcu nacisnąć ENTER");
-        tmp = in.nextLine();
-
         if((this.Rozmiar>0)&&(czy_nadpisac=true)){
             Zavartosc=tmp;
             Rozmiar=tmp.length();
@@ -57,7 +56,7 @@ public class Plik {
         this.Rozmiar=ilosc;
     }
 
-    public void otwuz(){
+    public void Otwurz(){
         System.out.println(this.Zavartosc);
     }
 
@@ -67,6 +66,10 @@ public class Plik {
 
     public void zmien_rozszerzenie(String nowe_roz){
         this.Rozszerzenia = nowe_roz;
+    }
+
+    public void Setrozmiar(int rozmiar){
+        this.Rozmiar = rozmiar;
     }
 
     public String toString(){
